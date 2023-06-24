@@ -25,11 +25,6 @@ public class Main {
 				System.out.println("A: " + diferencas[index].getA() + " B: " + diferencas[index].getB() + " Dif: " + diferencas[index].getDiferenca());
 			}
 		}
-		/*
-		System.out.println(index);
-		System.out.println(i);
-		for(int f=0; f<index; f++) System.out.println("A: " + diferencas[f].getA() + " B: " + diferencas[f].getB() + " Dif: " + diferencas[f].getDiferenca());
-		*/
 	}
 
 }
