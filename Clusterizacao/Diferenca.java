@@ -3,26 +3,22 @@ import java.lang.Math;
 
 public class Diferenca {
 
-	private Ponto a;
-	private Ponto b;
-	private double diferenca;
+	public Cluster a;
+	public Cluster b;
+	public double diferenca;
+	public int indiceA;
+	public int indiceB;
 	
-	public Diferenca(Ponto p1, Ponto p2) {
+	public Diferenca(Cluster p1, int indiceP1, Cluster p2, int indiceP2) {
 		a = p1;
 		b = p2;
-		diferenca = (a.getX() - b.getX()) + (a.getY() - b.getY());
-		diferenca = Math.sqrt(Math.abs(diferenca));
-	}
-	
-	public double getDiferenca() {
-		return diferenca;
-	}
-	
-	public String getA() {
-		return a.getCoordenada();
-	}
-	
-	public String getB() {
-		return b.getCoordenada();
+		indiceA = indiceP1;
+		indiceB = indiceP2;
+		
+		Ponto centroA = new Ponto( (a.somaX / a.n), (a.somaY / a.n) );
+		Ponto centroB = new Ponto( (b.somaX / b.n), (b.somaY / b.n) );
+
+		diferenca = Math.pow(centroA.x - centroB.x, 2) + Math.pow(centroA.y - centroB.y, 2);
+		diferenca = Math.sqrt(diferenca);
 	}
 }

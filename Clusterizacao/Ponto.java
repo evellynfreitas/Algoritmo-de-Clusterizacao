@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Ponto {
 
-	private int x;
-	private int y;
+	public int x;
+	public int y;
 	
 	public Ponto(int n) {
 		Random r = new Random();
@@ -12,15 +12,12 @@ public class Ponto {
 		y = r.nextInt(n) + 1;
 	}
 	
-	public int getX() {
-		return x;
-	}
-	
-	public int getY() {
-		return y;
-	}
-	
 	public String getCoordenada() {
 		return "("+x+","+y+")";
+	}
+	
+	public Ponto(int x, int y) {
+		this.x = x;
+		this.y = y;
 	}
 }
