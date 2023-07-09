@@ -21,4 +21,8 @@ public class Diferenca {
 		diferenca = Math.pow(centroA.x - centroB.x, 2) + Math.pow(centroA.y - centroB.y, 2);
 		diferenca = Math.sqrt(diferenca);
 	}
+	
+	public Diferenca() {
+		diferenca = Integer.MAX_VALUE;
+	}
 }

@@ -2,38 +2,24 @@ package Clusterizacao;
 
 public class Cluster {
 
-	public Ponto[] pontos;
-	public int somaX;
-	public int somaY;
-	public int n;
+	public double somaX=0;
+	public double somaY=0;
+	public int n=0;
+	public boolean ativo = true;
 	
-	public Cluster(int qtd, Ponto[] p) {
-		n = qtd;
-		pontos = new Ponto[n];
-		somaX=0;
-		somaY=0;
-		
-		for(int i=0; i<qtd; i++) {
-			pontos[i] = p[i];
-			somaX += pontos[i].x;
-			somaY += pontos[i].y;
-		}
+	public Cluster(Cluster a, Cluster b) {
+		n = a.n + b.n;
+		somaX= a.somaX + b.somaX;
+		somaY= a.somaY + b.somaY;
 	}
 	
 	public Cluster(Ponto p) {
 		n = 1;
-		pontos = new Ponto[1];
-		somaX=0;
-		somaY=0;
-		
-		pontos[0] = p;
-		somaX += p.x;
-		somaY += p.y;
-		
+		somaX = p.x;
+		somaY = p.y;
 	}
 	
-	public void printCluster() {
-		System.out.print("\nCluster: ");
-		for(int i=0; i<n; i++) System.out.print(pontos[i].getCoordenada() + " ");
+	public String printCluster() {
+		return "Cluster (" + (somaX/n) + ", " + (somaY/n) + ")";
 	}
 }

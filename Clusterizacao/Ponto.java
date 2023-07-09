@@ -3,8 +3,8 @@ import java.util.Random;
 
 public class Ponto {
 
-	public int x;
-	public int y;
+	public double x;
+	public double y;
 	
 	public Ponto(int n) {
 		Random r = new Random();
@@ -16,7 +16,7 @@ public class Ponto {
 		return "("+x+","+y+")";
 	}
 	
-	public Ponto(int x, int y) {
+	public Ponto(double x, double y) {
 		this.x = x;
 		this.y = y;
 	}
