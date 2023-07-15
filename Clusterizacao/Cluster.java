@@ -1,11 +1,10 @@
 package Clusterizacao;
 
-public class Cluster {
+public class Cluster{
 
 	public double somaX=0;
 	public double somaY=0;
 	public int n=0;
-	public boolean ativo = true;
 	
 	public Cluster(Cluster a, Cluster b) {
 		n = a.n + b.n;
@@ -22,4 +21,5 @@ public class Cluster {
 	public String printCluster() {
 		return "Cluster (" + (somaX/n) + ", " + (somaY/n) + ")";
 	}
+
 }
