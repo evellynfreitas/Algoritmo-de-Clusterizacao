@@ -2,8 +2,8 @@ package Clusterizacao;
 
 public class Arvbin
 {
-	private Cluster raiz;
-	private Arvbin esq, dir;
+	public Cluster raiz;
+	public Arvbin esq, dir;
 
 	public Arvbin(Cluster no)
 	{
@@ -51,15 +51,29 @@ public class Arvbin
 
 	public void mostra()
 	{
-		System.out.print("(" + raiz);
+		System.out.print("[" + raiz.printCluster());
 		if (esq != null)
 			esq.mostra();
 		if (dir != null)
 			dir.mostra();
-		System.out.print(")");
+		System.out.print("]");
 	}
 
-	
+	public int contaNos()
+	{
+		if((esq == null) && (dir == null))
+			return 1;
+		
+		int nosEsq = 0, nosDir = 0;
+		
+		if(esq != null)
+			nosEsq = esq.contaNos();
+		
+		if(dir != null)
+			nosDir = dir.contaNos();
+		
+		return 1 + nosEsq + nosDir;
+	}
 
 
 }

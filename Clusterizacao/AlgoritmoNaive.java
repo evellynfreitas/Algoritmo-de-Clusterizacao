@@ -33,15 +33,20 @@ public class AlgoritmoNaive {
 	}
 	
 	public void clusterizacao() {
-		
-		for(int i=0; i<n; i++) System.out.println(clusters[i].printCluster());
+		/*
+		for(int i=0; i<n; i++){
+			System.out.println(clusters[i].printCluster());
+			//clusters[i].arvore.mostra();
+		}
+		*/
 		long inicio = System.nanoTime();
 		
 		while(n > 1) {
 			Diferenca menor = menor();
-			//System.out.println("Menor - Diferenca: " + menor.diferenca + menor.a.printCluster() + menor.b.printCluster() );
 
 			Cluster c = new Cluster(menor.a, menor.b);
+			c.arvore.esq = clusters[menor.indiceA].arvore;
+			c.arvore.dir = clusters[menor.indiceB].arvore;
 			
 			if(menor.indiceA == n-1)
 				clusters[menor.indiceB] = c;
@@ -53,8 +58,7 @@ public class AlgoritmoNaive {
 				clusters[menor.indiceB] = c;	//joga o novo cluster para a outra posição
 			}
 			
-			n--; // passa a disconsiderar a última posição
-			//System.out.println(c.printCluster());
+			n--;
 		}
 		
 
@@ -67,11 +71,15 @@ public class AlgoritmoNaive {
         System.out.println("Tempo em nanosegundos: " + tempo);
         System.out.println("Tempo em millisegundos: " + (tempo / 1000000));
 		System.out.println("-------------------------------");
+		
+		/*
 		System.out.println(clusters[n-1].printCluster());
+		System.out.println(clusters[n-1].arvore.contaNos());
+		clusters[n-1].arvore.mostra();*/
 	}
 	
 	public static void main(String[] args) {
-		AlgoritmoNaive teste = new AlgoritmoNaive(10);
+		AlgoritmoNaive teste = new AlgoritmoNaive(5000);
 		teste.clusterizacao();
 	}
 }
