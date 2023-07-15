@@ -25,4 +25,5 @@ public class Diferenca {
 	public Diferenca() {
 		diferenca = Integer.MAX_VALUE;
 	}
+	
 }
