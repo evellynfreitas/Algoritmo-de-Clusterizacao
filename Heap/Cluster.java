@@ -1,24 +1,28 @@
-package Clusterizacao;
+package Heap;
 
 public class Cluster{
+
 
 	public double somaX=0;
 	public double somaY=0;
 	public int n=0;
 	public Arvbin arvore;
+	public int id;
 	
-	public Cluster(Cluster a, Cluster b) {
+	public Cluster(Cluster a, Cluster b, int i) {
 		n = a.n + b.n;
 		somaX= a.somaX + b.somaX;
 		somaY= a.somaY + b.somaY;
 		arvore = new Arvbin(this);
+		id=i;
 	}
 	
-	public Cluster(Ponto p) {
+	public Cluster(Ponto p, int i) {
 		n = 1;
 		somaX = p.x;
 		somaY = p.y;
 		arvore = new Arvbin(this);
+		id=i;
 	}
 	
 	public String printCluster() {
@@ -30,3 +34,4 @@ public class Cluster{
 	
 
 }
+

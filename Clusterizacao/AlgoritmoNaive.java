@@ -32,6 +32,7 @@ public class AlgoritmoNaive {
 		return menor;
 	}
 	
+	
 	public void clusterizacao() {
 		/*
 		for(int i=0; i<n; i++){
@@ -57,8 +58,8 @@ public class AlgoritmoNaive {
 				clusters[menor.indiceA] = ult;	//joga o último para outra posição
 				clusters[menor.indiceB] = c;	//joga o novo cluster para a outra posição
 			}
-			
 			n--;
+			
 		}
 		
 
@@ -77,9 +78,12 @@ public class AlgoritmoNaive {
 		System.out.println(clusters[n-1].arvore.contaNos());
 		clusters[n-1].arvore.mostra();*/
 	}
-	
+	/*
 	public static void main(String[] args) {
-		//AlgoritmoNaive teste = new AlgoritmoNaive(5000);
-		//teste.clusterizacao();
-	}
+		System.out.println("Começou");
+		AlgoritmoNaive teste = new AlgoritmoNaive(20000);
+		teste.clusterizacao();
+		
+
+	}*/
 }
